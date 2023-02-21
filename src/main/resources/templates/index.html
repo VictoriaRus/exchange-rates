@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:
+      th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous">
+    <link th:href="@{/styles/main.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row section">
+        <div class="col-lg-2 col-sm-12">
+            <div th:if="${allRatesList}" class="allRatesTable">
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdownButtonRates">
+                        Валюта
+                    </button>
+                    <ul class="dropdown-menu" id="dpopdownRates">
+                        <li th:each="rate: ${allRatesList}">
+                            <a class="dropdown-item" th:attr="
+                                                rateID=${rate.getId},
+                                                rateDateStart=${rate.dateStart},
+                                                rateDateEnd=${rate.dateEnd},
+                                                rateAbbreviation=${rate.getAbbreviation},
+                                                rateName=${rate.getName}
+                                             "
+                               th:text="| ${rate.getAbbreviation} ${rate.getName} | "
+                            >
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn  btn-light dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            id="dropdownButtonDateStart">
+                        Дата от:
+                    </button>
+                    <ul class="dropdown-menu" id="dpopdownDateStart">
+                        <li th:each="date: ${allDates}">
+                            <a class="dropdown-item" th:attr="date=${date}"
+                               th:text="| ${date} | "
+                            >
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn  btn-light dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            id="dropdownButtonDateEnd">
+                        Дата до:
+                    </button>
+                    <ul class="dropdown-menu" id="dpopdownDateEnd">
+                        <li th:each="date: ${allDates}">
+                            <a class="dropdown-item" th:attr="date=${date}"
+                               th:text="| ${date} |"
+                            >
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="button" class="btn btn-primary" id="buttonPostToServer">Выполнить</button>
+
+            </div>
+        </div>
+        <div class="col-lg-10 col-sm-12">
+            <div class="rateSpecificDateDtoList" id="rateSpecificDateDtoList">
+                <canvas id="myChart" style="position: relative; height:260px; width:80vw"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:inline="javascript">
+    let allRatesList = /*[[${allRatesList}]]*/[];
+</script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+<script type="module" th:src="@{/js/main.js}"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+body {
+    background-color: #f2f3f4;
+}
+
+.dropdown-item {
+    display: inline-block;
+    height: auto;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.section {
+    padding: 15px 0;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.dropdown-menu {
+    width: 100%;
+}
+
+.allRatesTable {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+#buttonPostToServer {
+    width: 100%;
+    background-color: #24a0ed;
+}
+
+#dropdownButtonDateStart {
+    margin-bottom: 10px;
+}
+
+#dropdownButtonDateEnd {
+    margin-bottom: 10px;
+}
+
+#dropdownButtonRates {
+    background-color: #24a0ed;
+    margin-bottom: 30px;
+}
+
+#rateSpecificDateDtoList {
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .dropdown-item {
+        display: inline-block;
+        height: auto;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .btn-group {
+        width: 214px;
+    }
+
+    .dropdown-menu {
+        width: 214px;
+    }
+
+    .allRatesTable {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    #dpopdownRates {
+        width: 214px;
+    }
+
+    #dropdownButtonRates {
+        width: 214px;
+        background-color: #24a0ed;
+        margin-bottom: 30px;
+    }
+
+    #buttonPostToServer {
+        width: 214px;
+        background-color: #24a0ed;
+    }
+
+    #dropdownButtonDateStart {
+        width: 214px;
+        margin-bottom: 10px;
+    }
+
+    #dropdownButtonDateEnd {
+        width: 214px;
+        margin-bottom: 10px;
+    }
+
+    #dpopdownDateStart {
+        width: 214px;
+    }
+
+    #dpopdownDateEnd {
+        width: 214px;
+    }
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 30px 0;
+    }
+
+    .btn-group {
+        width: 214px;
+    }
+
+    .dropdown-menu {
+        width: 214px;
+    }
+
+    .allRatesTable {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    #buttonPostToServer {
+        width: 100px;
+        background-color: #24a0ed;
+    }
+
+    #dropdownButtonDateStart {
+        margin-bottom: 0;
+    }
+
+    #dropdownButtonDateEnd {
+        margin-bottom: 0;
+    }
+
+    #dropdownButtonRates {
+        background-color: #24a0ed;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+
+
+    #dropdownButtonDateStart {
+        border: 2px solid #24a0ed;
+        margin-bottom: 10px;
+    }
+
+    #dropdownButtonDateEnd {
+        border: 2px solid #24a0ed;
+        margin-bottom: 70px;
+    }
+
+    #buttonPostToServer {
+        width: 214px;
+    }
+
+    #dropdownButtonRates {
+        margin-bottom: 25px;
+    }
+
+    .allRatesTable {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
